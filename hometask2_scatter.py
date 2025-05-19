@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Создание двух наборов случайных данных
-random_array_x = np.random.rand(5) # Массив из 5 случайных чисел по оси x
-random_array_y = np.random.rand(5) # Массив из 5 случайных чисел по оси y
+random_array_x = np.random.rand(50) # Массив из 5 случайных чисел по оси x
+random_array_y = np.random.rand(50) # Массив из 5 случайных чисел по оси y
 
 # Создание диаграммы
 plt.scatter(random_array_x, random_array_y)
