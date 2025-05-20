@@ -5,23 +5,24 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
+df = pd.read_csv("cleaned_products.csv", encoding="utf-8")
 
-# Загрузка данных из CSV-файла
-file_path = 'cleaned_products.csv'
-data = pd.read_csv(file_path)
+# Названия столбцов
+print("Названия столбцов: ", df.columns)
 
-# Предположим, что столбец с ценами называется 'price'
-prices = data['Цены на диваны']
+# Средняя цена
+mean_price = df["Цены на диваны"].mean()
+print(f"Средняя цена на диваны — {mean_price}")
 
 # Построение гистограммы
-plt.hist(prices, bins=10, edgecolor='black')
+plt.hist(df["Цены на диваны"], bins=15, edgecolor = "black", color = "purple")
 
-# Мы можем изменить количество bin-ов по своему усмотрению
+# Кастомизация гистограммы
+plt.xlabel("Цена")
+plt.ylabel("Частота")
+plt.title("Гистограмма цен на диваны")
 
-# Добавление заголовка и меток осей
-plt.title('Гистограмма цен')
-plt.xlabel('Цена')
-plt.ylabel('Частота')
+plt.grid(True)
 
 # Показать гистограмму
 plt.show()
