@@ -5,17 +5,17 @@ import csv
 
 def clean_sofa_price(sofa_price):
     # Удаляем "₽/мес." и преобразуем в число
-    cleaned = sofa_price.replace('руб.', '').replace(' ', '').strip()
+    cleaned = sofa_price.replace("руб.", "").replace(" ", "").strip()
     if cleaned == '':
         raise ValueError("Пустая строка вместо цены")
     return int(cleaned)
 
 # Чтение данных из исходного CSV файла и их обработка
-input_file = 'products.csv'
-output_file = 'cleaned_products.csv'
+input_file = "products.csv"
+output_file = "cleaned_products.csv"
 
-with open(input_file, mode='r', encoding='utf-8') as infile, open(output_file, mode='w', newline='',
-                                                                  encoding='utf-8') as outfile:
+with open(input_file, mode = "r", encoding = "utf-8") as infile, open(output_file, mode = "w", newline="",
+                                                                  encoding = "utf-8") as outfile:
     reader = csv.reader(infile)
     writer = csv.writer(outfile)
 
